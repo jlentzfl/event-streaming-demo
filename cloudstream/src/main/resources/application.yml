@@ -1,0 +1,20 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+spring.mail:
+  host: smtp.mailtrap.io
+  port: 2525
+  properties.mail.smtp:
+    auth: true
+    starttls.enable: true
+
+spring.cloud.stream.bindings:
+  input:
+    destination: order_customers
+    group: order_to_customer_processor
+  orderCustomersToEmail:
+    destination: order_customers
+    group: email_processor
+  emailsSent:
+    destination: emails_sent
