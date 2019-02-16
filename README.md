@@ -29,8 +29,9 @@ Startup at the end first so that your consumers are consuming before messages ar
 3.  Start the cloudstream dg.demo.cloudstream.Application with these extra program arguments `--spring.mail.username=<mailtrap user> --spring.mail.password=<mailtrap password>`
 
     If you are using a different mail server edit the application.yml to set settings accordingly.
+4.  Start the ordersimulator dg.demo.ordersimulator.Application with the extra program argument `--server.port=0` so it runs on a different port than the demo application
 
-4.  Start the JDBC source
+5.  Start the JDBC source
     ```
     java -jar jdbc-source-kafka-2.1.0.RC1.jar \
     --server.port=0 \
@@ -41,6 +42,5 @@ Startup at the end first so that your consumers are consuming before messages ar
     --spring.datasource.username=postgres \
     --spring.datasource.password=mypassword
     ```
-5.  Start the ordersimulator dg.demo.ordersimulator.Application with the extra program argument `--server.port=0` so it runs on a different port than the demo application
 
 
