@@ -18,3 +18,7 @@ spring.cloud.stream.bindings:
     group: email_processor
   emailsSent:
     destination: emails_sent
+spring.cloud.stream.kafka.bindings:
+  input.consumer:
+    resetOffsets: true
+    startOffset: earliest
